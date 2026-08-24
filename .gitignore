@@ -1,0 +1,6 @@
+engagements/
+.venv/
+__pycache__/
+*.db
+.coverage
+.pytest_cache/
