@@ -15,3 +15,13 @@ Deviations from spec:
    ignored parent directory). Followed the closing note: `.gitignore` excludes
    `engagements/`, but the directory itself is left for F-04 to create at runtime.
 Follow-ups raised: none
+
+## F-02 — Rule record schema
+Completed: 2026-08-24
+Deviations from spec: none. Two implementation-detail choices not fully pinned down
+by the spec text, applied consistently:
+1. "the rule was reviewed" (for `merge_extraction`'s statement/original_statement
+   handling) is read as `matched.review_state != ReviewState.PENDING`.
+2. `is_stale` is fully recomputed on every merge (`True` iff `source_hash` differs,
+   `False` otherwise) rather than a one-way flag that only ever turns `True`.
+Follow-ups raised: none
